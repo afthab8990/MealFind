@@ -15,7 +15,7 @@ A responsive React application for discovering meals from around the world.
 ## 🛠️ Tech Stack
 
 - **Frontend**: React 18, Tailwind CSS
-- **State Management**: React Hooks (useState, useEffect, useContext)
+- **State Management**: React Hooks (useState, useEffect)
 - **API**: TheMealDB API
 - **Icons**: Heroicons, React Icons
 - **Storage**: Session Storage for favorites persistence
@@ -35,16 +35,52 @@ A responsive React application for discovering meals from around the world.
 5. **Open your browser**
 Navigate to http://localhost:3000
 
-### Folder Structure
+```bash
+# Clone the repository
+git clone https://github.com/afthab8990/MealFind.git
 
-    src/
-    ├── components/
-    │   ├── Navbar.js          # Navigation with categories
-    │   ├── Hero.js            # Main content with meal grid
-    │   ├── Modal.js           # Meal details popup
-    │   
-    ├── App.js                 # Main application component
-    └── index.js              # Application entry point
+# Install dependencies
+npm install
+
+# Start development server
+npm start
+```
+
+### Folder Structure
+Once in this folder use the above commands
+```
+meal-finder-app/
+├── public/
+│   ├── index.html
+│   ├── favicon.ico
+│   └── manifest.json
+├── src/
+│   ├── components/
+│   │   ├── Navbar.js
+│   │   ├── Hero.js
+│   │   ├── Modal.js
+│   │   ├── Analytics.js
+│   │   ├── Newsletter.js
+│   │   └── Services.js
+│   ├── context/
+│   │   └── FavoritesContext.js
+│   ├── App.js
+│   ├── index.js
+│   ├── App.css
+│   └── index.css
+├── screenshots/
+│   ├── home-desktop.png
+│   ├── home-mobile.png
+│   ├── favorites-view.png
+│   ├── modal-view.png
+│   └── categories-menu.png
+├── package.json
+├── tailwind.config.js
+├── postcss.config.js
+├── .gitignore
+├── README.md
+└── LICENSE
+```
 
 ### Screenshots
 Desktop sidebar
@@ -64,5 +100,6 @@ Mobile modal
 
 Mobile home
 <img width="1920" height="1080" alt="Mobile-home-view" src="https://github.com/user-attachments/assets/0388854b-6b48-4b5c-9df7-3220e515ada2" />
+
 
 
