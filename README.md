@@ -1,4 +1,5 @@
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/c736be2d-c6b0-4517-bb5a-0fde58a3a018" /># 🍽️ MEALfind.mi 
+
+# 🍽️ MEALfind.mi 
 
 A responsive React application for discovering meals from around the world.
 
@@ -28,10 +29,10 @@ A responsive React application for discovering meals from around the world.
 ### Installation
 1. **Clone the repository**
 2. **Install dependencies**
-    npm install
+   `npm install`
 3. **Start the development server**
-    npm start
-4. **Open your browser**
+   `npm start`
+5. **Open your browser**
 Navigate to http://localhost:3000
 
 ### Folder Structure
@@ -63,4 +64,5 @@ Mobile modal
 
 Mobile home
 <img width="1920" height="1080" alt="Mobile-home-view" src="https://github.com/user-attachments/assets/0388854b-6b48-4b5c-9df7-3220e515ada2" />
+
 
