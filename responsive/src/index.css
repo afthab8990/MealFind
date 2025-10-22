@@ -6,7 +6,7 @@
   }
 
   .btn{
-    @apply  hover:bg-orange-600 text-black  py-2 px-4 my-2 w-9/12 rounded-lg hover:shadow-md hover:text-white transition-all duration-200;
+    @apply  hover:bg-blue-600 text-black  py-2 px-4 my-2 w-full rounded-lg hover:shadow-md hover:text-white transition-all duration-200;
   }
 
   .headings{
@@ -15,5 +15,6 @@
 }
 
 body{
-  background-color: white;
+  background-color: rgb(245, 245, 245);
+  font-family: Arial, Helvetica, sans-serif;
 }

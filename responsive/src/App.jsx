@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import Hero from './components/Hero'
@@ -8,8 +7,9 @@ function App() {
   const [cat, setCat] = useState([])
   const [selectedCat, setSelectedCategory] = useState('all')
   const [meals, setMeals] = useState([])
-  const [favorites, setFavorites] = useState([]) // Add favorites state
+  const [favorites, setFavorites] = useState([])
   const [loading, setLoading] = useState(false)
+  const [showFavorites, setShowFavorites] = useState(false) 
 
   useEffect(() => {
     axios.get('https://www.themealdb.com/api/json/v1/1/categories.php')
@@ -17,7 +17,6 @@ function App() {
       .catch(err => alert("Error fetching categories", err))
   }, [])
 
-  // Load favorites from sessionStorage on mount
   useEffect(() => {
     const storedFavorites = sessionStorage.getItem('mealFavorites')
     if (storedFavorites) {
@@ -25,12 +24,17 @@ function App() {
     }
   }, [])
 
-  // Save favorites to sessionStorage when favorites change
   useEffect(() => {
     sessionStorage.setItem('mealFavorites', JSON.stringify(favorites))
   }, [favorites])
 
   useEffect(() => {
+
+    if (showFavorites) {
+      setLoading(false)
+      return
+    }
+
     const fetchMeals = async () => {
       setLoading(true)
       try {
@@ -53,13 +57,19 @@ function App() {
     }
 
     fetchMeals()
-  }, [selectedCat])
+  }, [selectedCat, showFavorites]) 
 
   const handleCategorySelect = (category) => {
     setSelectedCategory(category)
+    setShowFavorites(false)
   }
 
-  // Favorite functions
+  const handleShowFavorites = () => {
+    setShowFavorites(true)
+    setSelectedCategory('favorites')
+  }
+
+
   const addToFavorites = (meal) => {
     setFavorites(prev => {
       const exists = prev.find(fav => fav.idMeal === meal.idMeal)
@@ -78,24 +88,27 @@ function App() {
     return favorites.some(fav => fav.idMeal === mealId)
   }
 
-  return (<>
+
+  const mealsToDisplay = showFavorites ? favorites : meals
+  const displayCategory = showFavorites ? 'Your Favorites' : selectedCat
+
+  return (
     <div>
       <Navbar 
         categories={cat} 
         onCategorySelect={handleCategorySelect}
-        favorites={favorites}
+        onShowFavorites={handleShowFavorites}
       />
       <Hero 
-        meals={meals} 
-        selectedCategory={selectedCat} 
+        meals={mealsToDisplay} 
+        selectedCategory={displayCategory} 
         loading={loading}
         onAddToFavorites={addToFavorites}
         onRemoveFromFavorites={removeFromFavorites}
         isFavorite={isFavorite}
       />
-
     </div>
-  </>)
+  )
 }
 
 export default App
