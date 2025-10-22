@@ -1,4 +1,4 @@
-# 🍽️ MEALfind.mi 
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/c736be2d-c6b0-4517-bb5a-0fde58a3a018" /># 🍽️ MEALfind.mi 
 
 A responsive React application for discovering meals from around the world.
 
@@ -35,6 +35,7 @@ A responsive React application for discovering meals from around the world.
 Navigate to http://localhost:3000
 
 ### Folder Structure
+
     src/
     ├── components/
     │   ├── Navbar.js          # Navigation with categories
@@ -44,3 +45,21 @@ Navigate to http://localhost:3000
     ├── App.js                 # Main application component
     └── index.js              # Application entry point
 
+### Screenshots
+Desktop sidebar
+<img width="1920" height="1080" alt="Desktop-sidebar-view" src="https://github.com/user-attachments/assets/a290513e-028e-4824-b617-f821d5cf23b6" />
+
+Desktop modal
+<img width="1920" height="1080" alt="Desktop-modal-view" src="https://github.com/user-attachments/assets/84937546-3f66-4b94-9be0-8148f7a54cdf" />
+
+Desktop home
+<img width="1920" height="1080" alt="Desktop-home-view" src="https://github.com/user-attachments/assets/6ab7acbb-c974-44c2-843d-d038e238336e" />
+
+ipad Modal
+<img width="1920" height="1080" alt="ipad-modal-view" src="https://github.com/user-attachments/assets/4188846b-066c-48f6-a5d0-fdb791019257" />
+
+Mobile modal
+<img width="1920" height="1080" alt="Mobile-modal-view" src="https://github.com/user-attachments/assets/fb5a7353-1af4-42f4-ab5e-6534397656bf" />
+
+Mobile home
+<img width="1920" height="1080" alt="Mobile-home-view" src="https://github.com/user-attachments/assets/0388854b-6b48-4b5c-9df7-3220e515ada2" />
