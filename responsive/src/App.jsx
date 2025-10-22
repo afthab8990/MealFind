@@ -29,7 +29,6 @@ function App() {
   }, [favorites])
 
   useEffect(() => {
-
     if (showFavorites) {
       setLoading(false)
       return
@@ -69,7 +68,6 @@ function App() {
     setSelectedCategory('favorites')
   }
 
-
   const addToFavorites = (meal) => {
     setFavorites(prev => {
       const exists = prev.find(fav => fav.idMeal === meal.idMeal)
@@ -87,7 +85,6 @@ function App() {
   const isFavorite = (mealId) => {
     return favorites.some(fav => fav.idMeal === mealId)
   }
-
 
   const mealsToDisplay = showFavorites ? favorites : meals
   const displayCategory = showFavorites ? 'Your Favorites' : selectedCat

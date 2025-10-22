@@ -9,6 +9,7 @@ const Hero = ({ meals, selectedCategory, loading, onAddToFavorites, onRemoveFrom
   const [modal, setModal] = useState('')
   const [loadModal, setLoadModal] = useState(false)
   const [mealDetails, setMealDetails] = useState(null)
+  const [random,setRandom] = useState('')
   
   useEffect(() => {
     if (modal) {
@@ -33,6 +34,24 @@ const Hero = ({ meals, selectedCategory, loading, onAddToFavorites, onRemoveFrom
     setModal(mealId)
   }
 
+  const closeModal = () => {
+    console.log("close")
+    setModal('')
+    setMealDetails(null)
+  }
+
+  const handleRandom = () => {
+    axios.get('https://www.themealdb.com/api/json/v1/1/random.php')
+      .then(res => {
+        const randomMeal = res.data.meals[0]; 
+        setRandom(randomMeal); 
+        setModal(randomMeal.idMeal); 
+      })
+      .catch(error => {
+        console.error('Error fetching random meal:', error);
+      });
+  }
+
   const handleFavoriteClick = (meal) => {
     if (isFavorite(meal.idMeal)) {
       onRemoveFromFavorites(meal.idMeal)
@@ -41,23 +60,27 @@ const Hero = ({ meals, selectedCategory, loading, onAddToFavorites, onRemoveFrom
     }
   }
 
-  const closeModal = () => {
-    console.log("close")
-    setModal('')
-    setMealDetails(null)
-  }
-
   return (
     <>
       <div className='relative bg-none m-12 sm:m-7 md:m-24 mt-20'> 
-        <h1 className='headings my-4'>
+        <h1 className='text-2xl sm:text-3xl md:text-4xl my-4'>
           {selectedCategory === 'all' ? 'All Meals' : `${selectedCategory} Meals`}
         </h1>
-        
+      
+      {/* Card load */}
         {loading ? (
           <div>Loading meals...</div>
         ) : (
+          // Card grid
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4">
+            {/* random laoder */}
+            <div  className="border bg-blue-600 hover:bg-blue-700 cursor-pointer text-white flex justify-center items-center border-gray-300 rounded-lg hover:shadow-md text-center relative overflow-hidden transition-all" onClick={()=>{handleRandom()}}>
+                <div className='p-2 relative'>
+                  <h2 className="font-bold text-2xl">Click for random</h2>
+                </div>
+              </div>
+
+              {/* Card mapper */}
             {meals.map((meal) => (
               <div key={meal.idMeal} className="border bg-white border-gray-300 rounded-lg hover:shadow-md text-center relative overflow-hidden transition-all">
                 <button
@@ -72,7 +95,7 @@ const Hero = ({ meals, selectedCategory, loading, onAddToFavorites, onRemoveFrom
                   <h2 className="font-medium">{meal.strMeal}</h2>
                   <button 
                     onClick={() => handleModalClick(meal.idMeal)} 
-                    className='btn w-full border-1 border-gray-200 hover:border-none'
+                    className=' btn w-full border-1 border-gray-200 hover:border-none'
                   >
                     More Details
                   </button>
@@ -86,7 +109,7 @@ const Hero = ({ meals, selectedCategory, loading, onAddToFavorites, onRemoveFrom
           <div>No meals found</div>
         )}
         
-
+        {/* Prop set */}
         {loadModal ? (
           <Modal 
             meal={mealDetails} 
