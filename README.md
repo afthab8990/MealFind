@@ -90,6 +90,10 @@ Mobile modal
 Mobile home
 <img width="1920" height="1080" alt="Mobile-home-view" src="https://github.com/user-attachments/assets/0388854b-6b48-4b5c-9df7-3220e515ada2" />
 
+Desktop Favourite
+<img width="1920" height="1080" alt="Desktop-Fav-view" src="https://github.com/user-attachments/assets/da7a2cbd-7aed-4aab-ad0a-7e7a12c9c587" />
+
+
 
 
 
