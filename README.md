@@ -49,37 +49,24 @@ npm start
 ### Folder Structure
 Once in this folder use the above commands
 ```
-meal-finder-app/
+responsive/
 ├── public/
-│   ├── index.html
 │   ├── favicon.ico
-│   └── manifest.json
 ├── src/
 │   ├── components/
 │   │   ├── Navbar.js
 │   │   ├── Hero.js
 │   │   ├── Modal.js
-│   │   ├── Analytics.js
-│   │   ├── Newsletter.js
-│   │   └── Services.js
-│   ├── context/
-│   │   └── FavoritesContext.js
 │   ├── App.js
 │   ├── index.js
-│   ├── App.css
 │   └── index.css
-├── screenshots/
-│   ├── home-desktop.png
-│   ├── home-mobile.png
-│   ├── favorites-view.png
-│   ├── modal-view.png
-│   └── categories-menu.png
 ├── package.json
-├── tailwind.config.js
-├── postcss.config.js
+├── index.html
+├── eslint.config.js
+├── package-lock.json
+├── vite.config.js
 ├── .gitignore
-├── README.md
-└── LICENSE
+└── README.md
 ```
 
 ### Screenshots
@@ -100,6 +87,7 @@ Mobile modal
 
 Mobile home
 <img width="1920" height="1080" alt="Mobile-home-view" src="https://github.com/user-attachments/assets/0388854b-6b48-4b5c-9df7-3220e515ada2" />
+
 
 
 
